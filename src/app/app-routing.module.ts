@@ -1,21 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { QuienSoyComponent } from './quien-soy/quien-soy.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { QuienSoyComponent } from './pages/quien-soy/quien-soy.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {
-    path: "login",
+    path: 'login',
     component: LoginComponent
   },
   {
-    path: "home",
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'home',
     component: HomeComponent
   },
   {
-    path: "quien-soy",
+    path: 'quien-soy',
     component: QuienSoyComponent
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: ErrorComponent
   }
 ];
 
